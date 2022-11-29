@@ -73,7 +73,7 @@ scanf(%c%c%c%c%c, &char1, &char2, &char3, &char4, &char5);
 printf("%c%c%c%c%c", char5, char4, char3, char2, char1);
 
 //1_14
-unsigned double USD, NTD, trans = 32.35;
+double USD, NTD, trans = 32.35;
 scanf("%lf", &USD);
 NTD = USD * trans;
 printf("%.6lf", NTD);
@@ -137,7 +137,7 @@ time = students * efficency;
 printf("%zu分鐘", time);
 
 //1_25
-unsigned double r, pi = 3.14159, area;
+double r, pi = 3.14159, area;
 printf("請輸入半徑:");
 scanf("%lf", &r);
 area = pow(r, 2) * pi;
@@ -156,7 +156,7 @@ total = a * b;
 printf("%zu", total);
 
 //1_28
-unsigned double pi = 3.14159, r, area, volume;
+double pi = 3.14159, r, area, volume;
 scanf("%lf", &r);
 volume = 4 * pi * pow(r, 3) / 3;
 area = 4 * pi * pow(r, 2);
@@ -164,7 +164,7 @@ printf("%.2lf%.2lf", volume, area);
 
 //1_29
 size_t x1, x2, y1, y2;
-unsigned double distance, slope;
+double distance, slope;
 scanf("%zu%zu%zu%zu", &x1, &y1, &x2, &y2);
 distance = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
 slope = (y1 - y2) / (x1 - x2);

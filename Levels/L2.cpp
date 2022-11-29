@@ -15,7 +15,7 @@ printf("%zu", time);
 
 //2_03
 size_t a = 90, b = 95, c = 85, d = 64, e = 84;
-unsigned double total, avg;
+double total, avg;
 total = a + b + c + d + e;
 avg = total / 5.0;
 printf("%.6lf\n%.6lf", total, avg);
@@ -29,7 +29,7 @@ printf("%.6lf\n%.6lf", USD, GBP);
 
 //2_05
 size_t upper, lower, high;
-unsigned double area;
+double area;
 scanf("%zu%zu%zu", &upper, &lower, &high);
 area = (upper + lower) * high / 2.0;
 printf("%.6lf", area);
@@ -72,7 +72,7 @@ printf("%.2f", total);
 
 //2_12
 size_t principle, year;
-unsigned double interest_1 = 0.0063, interest_2 = 0.0066, interest_3 = 0.0069, interest_5 = 0.0075, interest_8 = 0.0084;
+double interest_1 = 0.0063, interest_2 = 0.0066, interest_3 = 0.0069, interest_5 = 0.0075, interest_8 = 0.0084;
 scanf("%zu%zu", &principle, &year);
 switch (year)
 {
@@ -92,7 +92,7 @@ net_income = (part_time + salary) * (1 - tax);
 printf("%zu", net_income);
 
 //2_14
-unsigned double pi = 3.14159, r, circumference, area;
+double pi = 3.14159, r, circumference, area;
 scanf("%lf", &r);
 circumference = 2 * pi * r;
 area = pi * pow(r, 2);
