@@ -1,3 +1,5 @@
+// written by OuOhaha
+
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
@@ -35,38 +37,32 @@ while(value <= limit)
 }
 
 //4_03
-size_t import, defective_value;
-scanf("%zu%zu", &import, &defective_value);
-if(import > 5000)
+float import, defective_value;
+scanf("%f%f", &import, &defective_value);
+if(import <= 5000)
 {
-  if(defective_value / import > 0.05) printf("退貨數量為 %zu 個", import);
+  if(defective_value / import > 0.05) printf("退貨數量為 %f 個", import);
   else if(defective_value / import <= 0.02) puts("退貨數量為 0 個");
-  else printf("%zu", defective_value);
+  else printf("%.0f", defective_value);
 }
 else
 {
-  if(defective_value / import > 0.06) printf("退貨數量為 %zu 個", import);
+  if(defective_value / import > 0.06) printf("退貨數量為 %f 個", import);
   else if(defective_value / import <= 0.03) puts("退貨數量為 0 個");
-  else printf("%zu", defective_value);
+  else printf("%.0f", defective_value);
 }
 
 //4_04
-size_t n, total;
+size_t n, total = 0;
 printf("N=");
 scanf("%zu", &n);
-if(n % 2 == 1)
-{
-  for(int i = 0, i <= N / 2; i++) total += 2 * i + 1;
-}
-else
-{
-  for(int i = 0, i <= N / 2; i++) total += 2 * i + 2;
-}
+if(n % 2 == 1) for(int i = 1; i <= n; i += 2) total += i;
+else for(int i = 2; i <= n; i += 2) total += i;
 printf("%zu", total);
 
 //4_05
 size_t num = 1;
-for(int i = 0; i < 6 ; i++)
+for(int i = 0; i <= 6 ; i++)
 {
   for(int j = 0; j < i; j++)
   {
@@ -101,11 +97,11 @@ else
 printf("%.6lf", total);
 
 //4_07
-for(size_t a = 0; a < 3; a++)
-  for(size_t b = 0; b < 3; b++)
-    for(size_t c = 0; c < 3; c++)
+for(size_t a = 1; a <= 3; a++)
+  for(size_t b = 1; b <= 3; b++)
+    for(size_t c = 1; c <= 3; c++)
     {
-      if(a != b && a != c && b != c && a != 1 && c != 1 && c != 3)
+      if((a != b) && (a != c) && (b != c) && (a != 1) && (c != 1) && (c != 3))
       {
         switch (a)
         {
@@ -402,3 +398,73 @@ if(avg >= 60) printf("平均成績為%zu分 yes", avg);
 else printf("平均成績為%zu分 no", avg);
 
 //4_26
+size_t a, b, test = 0, n, r = 0;
+scanf("%zu%zu", &a, &b);
+for(size_t i = a; i <= b; i++)
+{
+  n = 10;
+  while(i % n == i * i % n)
+  {
+    n *= 10;
+    if(n / 10 > i) r++;
+  }
+}
+if(r > 0) puts("Yes");
+else puts("No");
+
+//4_27
+size_t fib(size_t n)
+{
+  if(n == 1) return 1;
+  else if(n == 2) return 2;
+  else if(n == 3) return 3;
+  else if(n > 3) return fib(n - 1) + fib(n - 2);
+}
+size_t n, total = 0;
+scanf("%zu", &n);
+total += fib(n);
+printf("%zu", total);
+
+//4_28
+size_t n = 1, t = 0;
+while(scanf("%zu", &n) != EOF)
+{
+  t = 0;
+  if(n == 0) break;
+  while(1)
+  {
+    if(n % 2 == 1) t++;
+    else break;
+    n /= 2;
+  }
+
+//4_29
+size_t a, b, ap, bp, r = 0;
+scanf("%zu%zu", &a, &b);
+if(b == 0) printf("The denominator cannot be 0");
+else
+{
+  if(b > a)
+  {
+    ap = b;
+    bp = a;
+  }
+  else
+  {
+    ap = a;
+    bp = b;
+  }
+  for(size_t i = 1; i <= bp; i++)
+  {
+    if((ap % i == 0) && (bp % i == 0)) r = i;
+  }
+  printf("%zu %zu", a / r, b / r);
+}
+
+//4_30
+size_t now, want;
+scanf("%zu%zu", &now, &want);
+if(now > want) printf("%zu", 100 - (now - want));
+else printf("%zu", want - now);
+
+//written by OuOhaha
